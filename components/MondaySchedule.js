@@ -1,15 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, View, Image } from 'react-native';
 import {
   StackNavigator,
 } from 'react-navigation';
 
-import Viewer from './components/Viewer';
 
 
+export default class Viewer extends Component {
 
-
-export default class App extends React.Component {
   _onPressButton1() {
     Alert.alert('This service is not available!')
   }
@@ -17,35 +15,32 @@ export default class App extends React.Component {
     Alert.alert('Music record not found!')
   }
   _onPressButton3() {
-    //const {navigate} = this.props.navigation;
-    //this.props.navigation.navigate('Viewer');
+    Alert.alert('new page should be opened!')
   }
 
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
 
   }
 
   render() {
 
-    //const {navigate} = this.props.navigation;
-    
+
     let pic = {
-        uri: 'http://2.bp.blogspot.com/-NuYUxQTIccA/UUMdzAldBGI/AAAAAAAAiSY/YFyD-EX40tQ/s320/a.png'
+        uri: 'http://monday.pt/wp-content/uploads/2017/01/logo_orange_big.png'
       };
     return (
       
+      
       <View style={styles.container}>
       <Image source={pic} style={styles.image}/>
-       
-        
         <View style={styles.buttonContainer}>
           <Button
-            onPress={() => this.props.navigation.navigate('Viewer')}
-            title="Create my schedule!"
-            color="#841584"
+            onPress={this._onPressButton1}
+            title="Welcome!"
           />
         </View>
+       
       </View>
     );
   }
@@ -53,9 +48,9 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   image: {
-    width: 360,
-    height: 560,
-    position: 'absolute',
+    width: 420,
+    height: 100,
+    marginTop: -280,
     flexDirection: 'row',
     justifyContent: 'center',
   },
@@ -65,7 +60,7 @@ const styles = StyleSheet.create({
    alignItems: 'center',
   },
   buttonContainer: {
-    marginTop: 350
+    margin: 20
   },
   alternativeLayoutButtonContainer: {
     margin: 20,
@@ -74,13 +69,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const myscreens = StackNavigator({
-  Home: { screen: App },
-  Viewer: { screen: Viewer },
-});
-
-
 // skip this line if using Create React Native App
-AppRegistry.registerComponent('Jarvis', () => myscreens);
+//AppRegistry.registerComponent('AwesomeProject', () => myscreens);
 
 

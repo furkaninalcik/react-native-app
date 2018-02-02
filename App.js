@@ -8,6 +8,7 @@ import LoginScreen from './components/LoginScreen';
 import HomeScreen from './components/HomeScreen';
 import App_openScreen from './App_openScreen';
 import Viewer from './components/Viewer';
+import MondaySchedule from './components/MondaySchedule';
 
 
 
@@ -23,8 +24,7 @@ const Myscreens = StackNavigator({
   
   App_openScreen: { screen: App_openScreen },
   Viewer: { screen: Viewer },
-  LoginScreen: { screen: LoginScreen },
-  HomeScreen: { screen: HomeScreen }
+   MondaySchedule: { screen: MondaySchedule }
 });
 
 

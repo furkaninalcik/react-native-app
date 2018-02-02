@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import { Alert, AppRegistry, Button, StyleSheet, View, Image } from 'react-native';
+import { Alert, AppRegistry, Button, StyleSheet, TouchableHighlight, View, Image } from 'react-native';
 import {
   StackNavigator,
 } from 'react-navigation';
 
-import Circle from "./Circle"
+
+import MondaySchedule from './MondaySchedule';
+
 
 export default class Viewer extends Component {
 
   _onPressButton1() {
-    Alert.alert('This service is not available!')
+    Alert.alert('Music record not found!')
+    //this.props.navigation.navigate('Viewer');
   }
   _onPressButton2() {
     Alert.alert('Music record not found!')
@@ -19,130 +22,110 @@ export default class Viewer extends Component {
   }
 
   constructor(props){
-    super(props)
+    super(props);
+    this.state ={
+      status:true
+    }
 
+  }
+
+  toggleStatus(){
+    this.setState({
+      status:!this.state.status
+    })
+  }
+
+  setNativeProps (nativeProps) {
+    this._root.setNativeProps(nativeProps);
   }
 
   render() {
 
 
     let pic = {
-        uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHO7VHE5PEwnHZ9OB4a46EWYSfQpJh2cwpp97OQ_gsBaurnc5M9A'
+        uri: 'https://www.kaptest.com/blog/prep/wp-content/uploads/sites/21/2012/04/GMAT-Study-Plan-One-Week-MBA-800x430-800x321.jpg'
       };
     return (
 
 
       <View style = {styles.container0}>
 
+              
+
         <View style={styles.container}>
 
         <Image source={pic} style={[styles.image, {transform: [{translateX: 0}] }]}/>
-          <View style = {[styles.note, {transform: [{translateY: 22},{translateX: 10}] }]} >
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateY: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-          </View>
-          <View style = {[styles.note, {transform: [{translateY: 22},{translateX: 20}] }]} >
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateY: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-          </View>
-          <View style = {[styles.note, {transform: [{translateY: 22},{translateX: 30}] }]} >
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateY: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-          </View>
-          <View style = {[styles.note, {transform: [{translateY: 22},{translateX: 40}] }]} >
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateY: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-          </View>
-            <View style = {[styles.note, {transform: [{translateY: 22},{translateX: 50}] }]} >
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateY: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-          </View>
-          <View style = {[styles.note, {transform: [{translateY: 22},{translateX: 60}] }]} >
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateY: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-          </View>
-          <View style = {[styles.note, {transform: [{translateY: 22},{translateX: 70}] }]} >
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateY: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-          </View>
-          <View style = {[styles.note, {transform: [{translateY: 22},{translateX: 80}] }]} >
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateY: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-          </View>
-          <View style = {[styles.note, {transform: [{translateY: 22},{translateX: 90}] }]} >
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateY: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-          </View>
-          <View style = {[styles.note, {transform: [{translateY: 22},{translateX: 100}] }]} >
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateY: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-          </View>
-          <View style = {[styles.note, {transform: [{translateY: 22},{translateX: 110}] }]} >
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateY: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-          </View>
-          <View style = {[styles.note, {transform: [{translateY: 22},{translateX: 120}] }]} >
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateY: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-          </View>
-            <View style = {[styles.note, {transform: [{translateY: 22},{translateX: 130}] }]} >
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateY: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-          </View>
-          <View style = {[styles.note, {transform: [{translateY: 22},{translateX: 140}] }]} >
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateY: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-          </View>
-          <View style = {[styles.note, {transform: [{translateY: 22},{translateX: 150}] }]} >
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateY: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-          </View>
-          <View style = {[styles.note, {transform: [{translateY: 22},{translateX: 160}] }]} >
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateY: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-              <Circle style={ [styles.symbols, {transform: [{translateX: 10}] }]}/>
-          </View>
+          
+
+          
 
           <View style={styles.buttonContainer}>
             <Button
-              onPress={this._onPressButton1}
-              title="Welcome!"
+              onPress={() => this.props.navigation.navigate('MondaySchedule')}
+              title="Monday"
             />
 
 
           </View>
 
+          <View style={styles.buttonContainer2}>
+            <Button
+              onPress={this._onPressButton1}
+              title="Tuesday"
+            />
+
+
+          </View>
+
+
+          <View style={styles.buttonContainer3}>
+            <Button
+              onPress={this._onPressButton1}
+              title="Wednesday"
+            />
+
+
+          </View>
+
+
+          <View style={styles.buttonContainer4}>
+            <Button
+              onPress={this._onPressButton1}
+              title="Thursday"
+            />
+
+
+          </View>
+
+
+          <View style={styles.buttonContainer5}>
+            <Button
+              onPress={this._onPressButton1}
+              title="Friday"
+            />
+
+
+          </View>
+
+
+          <View style={styles.buttonContainer6}>
+            <Button
+              onPress={this._onPressButton1}
+              title="Saturday"
+            />
+
+
+          </View>
+
+
+          <View style={styles.buttonContainer7}>
+            <Button
+              onPress={this._onPressButton1}
+              title="Sunday"
+            />
+
+
+          </View>
          
         </View>
 
@@ -167,6 +150,7 @@ const styles = StyleSheet.create({
   },
   image: {
     margin: 10,
+    marginTop: -80,
     width: 340,
     height: 150,
     flexDirection: 'row',
@@ -185,11 +169,48 @@ const styles = StyleSheet.create({
   buttonContainer: {
    position: 'absolute',
     flexDirection: 'row',
-    top: 210,
+    top: 100,
+  },
+  buttonContainer2: {
+   position: 'absolute',
+    flexDirection: 'row',
+    top: 150,
+  },
+  buttonContainer3: {
+   position: 'absolute',
+    flexDirection: 'row',
+    top: 200,
+  },
+  buttonContainer4: {
+   position: 'absolute',
+    flexDirection: 'row',
+    top: 250,
+  },
+  buttonContainer5: {
+   position: 'absolute',
+    flexDirection: 'row',
+    top: 300,
+  },
+  buttonContainer6: {
+   position: 'absolute',
+    flexDirection: 'row',
+    top: 350,
+  },
+  buttonContainer7: {
+   position: 'absolute',
+    flexDirection: 'row',
+    top: 400,
   }
 })
 
+
+
+const myscreens = StackNavigator({
+  
+  MondaySchedule: { screen: MondaySchedule },
+});
+
 // skip this line if using Create React Native App
-//AppRegistry.registerComponent('AwesomeProject', () => myscreens);
+AppRegistry.registerComponent('Jarvis', () => myscreens);
 
 
